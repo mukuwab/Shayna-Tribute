@@ -5,11 +5,14 @@ import shaynaPhoto from './assets/photos/shayna-main-pic.JPEG'
 import mukuwaPhoto from './assets/photos/7E4982D2-B71F-40BC-BD27-2DF99EB835A2.JPG'
 import zoePhoto from './assets/photos/Screenshot-2026-04-15-at-9.19.26-PM.png'
 import robertJrPhoto from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
+import zannyPhoto from './assets/photos/Screenshot-2026-04-15-at-8.29.56-PM.png'
+import bestFriendPhoto from './assets/photos/E508B0D5-EAA5-4D4B-86AB-C4FE96B7A661_1_105_c.jpeg'
 import bodyPhoto from './assets/photos/Screenshot-2026-04-16-at-12.21.15-AM.png'
 import recentPhoto from './assets/photos/View-recent-photos.png'
+import obituaryPhoto from './assets/photos/Screenshot-2026-04-16-at-12.40.38-AM.png'
 
 const photoModules = import.meta.glob('./assets/photos/*', { eager: true })
-const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM']
+const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM']
 
 const galleryPhotos = [
   shaynaPhoto,
@@ -25,13 +28,18 @@ const tributes = [
     photo: mukuwaPhoto,
     message: 'She was the only dog I knew who could light up an entire room with her smile. Even now, that smile lives on in our hearts.\n\nThough it hurts deeply to say goodbye, loving her was worth every moment, even the heartbreak.\n\nI love you, sweet girl. Rest in peace.',
   },
-  { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna' },
-  { name: 'Zanny', message: 'Good dog' },
+  { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna.' },
+  { name: 'Zanny', photo: zannyPhoto, message: 'Good dog!' },
   { name: 'Robert Jr.', photo: robertJrPhoto, message: 'Shayna was an awesome dog and I loved when she would stand on her hind legs when you come through the door! She was a cute dog.' },
+  {
+    name: "Shayna's Best Friend",
+    photo: bestFriendPhoto,
+    message: 'She was my best friend and companion for more years than I can count. We were rarely apart. Through every thunderstorm, every car alarm, every quiet night and restless one — she was there, and so was I. Whatever life brought, we faced it together.',
+  },
 ]
 
 function App() {
-  const [tab, setTab] = useState('tribute')
+  const [tab, setTab] = useState('obituary')
   const [lightbox, setLightbox] = useState(null) // index or null
 
   function openLightbox(i) { setLightbox(i) }
@@ -48,6 +56,12 @@ function App() {
   return (
     <div className="tribute">
       <nav className="tab-nav">
+        <button
+          className={`tab-btn${tab === 'obituary' ? ' active' : ''}`}
+          onClick={() => setTab('obituary')}
+        >
+          Obituary
+        </button>
         <button
           className={`tab-btn${tab === 'tribute' ? ' active' : ''}`}
           onClick={() => setTab('tribute')}
@@ -67,6 +81,61 @@ function App() {
           Tributes
         </button>
       </nav>
+
+      {tab === 'obituary' && (
+        <div className="obituary">
+          <div className="obit-photo-wrap">
+            <img src={obituaryPhoto} alt="Shayna" className="obit-photo" />
+          </div>
+          <h2 className="obit-name">Shayna</h2>
+          <p className="obit-dates">2012 &ndash; April 16, 2026</p>
+          <div className="obit-divider"><span className="paw">&#x1F43E;</span></div>
+          <div className="obit-body">
+            <p>
+              Shayna, a beloved and spirited little dog who brought joy to everyone she met,
+              was laid to rest peacefully on the morning of April 16, 2026, surrounded by
+              the family she loved so deeply.
+            </p>
+            <p>
+              For fourteen wonderful years, Shayna — a proud and spirited Yorkshire Terrier —
+              was more than a pet. She was a true member of the family. From her very first
+              day, she had a way of filling any room she entered with warmth, laughter, and an
+              unmistakable energy that was entirely her own. Her loose, curly coat, her golden
+              highlights, and her deep black eyes made her as beautiful on the outside as she
+              was on the inside.
+            </p>
+            <p>
+              Shayna spent her early years in the warm and loving home of Candace and her
+              family, where her bold personality first began to bloom. Those formative years
+              shaped the confident, spirited little soul she would remain for the rest of
+              her life.
+            </p>
+            <p>
+              Do not let her small size fool you — Shayna carried herself with the authority
+              of a dog twice her height. At the dog park, she was not merely known; she was
+              respected. Other dogs, regardless of their size, quickly learned to give her
+              the room she commanded. She was feared as much as she was adored, and she wore
+              that reputation with pride.
+            </p>
+            <p>
+              She was a devoted companion to Grandma during the long, quiet hours of the day,
+              and a faithful friend to Grandad on their morning walks and evening adventures.
+              She stood on her hind legs to greet the people she loved, never missed a chance
+              to ride with the windows down, and gave her love freely and without condition.
+            </p>
+            <p>
+              Shayna is survived by her loving family, who will carry her memory in their
+              hearts for the rest of their lives. She leaves behind not grief alone, but a
+              legacy of joy, loyalty, and the kind of unconditional love that only the
+              truest companions can give.
+            </p>
+            <p className="obit-closing">
+              She was small in size, but enormous in spirit.<br />
+              Run free, sweet girl. You will never be forgotten.
+            </p>
+          </div>
+        </div>
+      )}
 
       {tab === 'gallery' && (
         <div className="gallery">

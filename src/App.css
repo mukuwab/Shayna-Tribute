@@ -1,3 +1,84 @@
+/* ── Obituary ── */
+.obituary {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  text-align: center;
+}
+
+.obit-photo-wrap {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(145deg, var(--gold), var(--gold-light));
+  box-shadow: 0 6px 24px var(--shadow-color);
+  margin-bottom: 28px;
+}
+
+.obit-photo {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid var(--bg);
+}
+
+.obit-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 42px;
+  color: var(--text-heading);
+  letter-spacing: 2px;
+  margin: 0 0 6px;
+}
+
+.obit-dates {
+  font-size: 16px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-style: italic;
+  margin: 0 0 28px;
+}
+
+.obit-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.obit-divider::before,
+.obit-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-gold);
+  max-width: 120px;
+}
+
+.obit-body {
+  text-align: justify;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.obit-body p {
+  margin: 0 0 22px;
+}
+
+.obit-closing {
+  font-style: italic;
+  color: var(--text-heading) !important;
+  text-align: center !important;
+  margin-top: 36px;
+  font-size: 17px;
+  line-height: 2 !important;
+}
+
 /* ── Tab navigation ── */
 .tab-nav {
   display: flex;
