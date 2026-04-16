@@ -9,11 +9,13 @@ import photo6 from './assets/photos/B1398BD3-104B-4FCD-8993-3FF5F82906C8.jpg'
 import photo7 from './assets/photos/IMG_3950.JPG'
 import photo8 from './assets/photos/IMG_6787.PNG'
 import photo9 from './assets/photos/View recent photos.png'
+import photo10 from './assets/photos/Screenshot 2026-04-15 at 8.28.59 PM.png'
+import photo11 from './assets/photos/Screenshot 2026-04-15 at 8.29.56 PM.png'
 import './App.css'
 
 const galleryPhotos = [
   shaynaPhoto, photo1, photo2, photo3, photo4,
-  photo5, photo6, photo7, photo8, photo9,
+  photo5, photo6, photo7, photo8, photo9, photo10, photo11,
 ]
 
 function App() {
