@@ -13,7 +13,7 @@ import recentPhoto from './assets/photos/View-recent-photos.png'
 import obituaryPhoto from './assets/photos/Screenshot-2026-04-16-at-12.40.38-AM.png'
 
 const photoModules = import.meta.glob('./assets/photos/*', { eager: true })
-const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM', 'Screenshot-2026-04-16-at-12.57.10-AM', 'Screenshot-2026-04-15-at-9.19.26-PM']
+const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM', 'Screenshot-2026-04-16-at-12.57.10-AM', 'Screenshot-2026-04-15-at-9.19.26-PM', 'IMG_1922-3', 'IMG_1996-2', 'IMG_0786-2']
 
 const galleryPhotos = [
   shaynaPhoto,
@@ -28,6 +28,8 @@ const videos = [
   { id: 'wWO2G4J5AXQ', title: 'Shayna' },
   { id: 'jW16W78GkH8', title: 'Shayna' },
   { id: 'k1Jl6L7Cjdw', title: 'Shayna' },
+  { id: 'lk2rV_lYBBI', title: 'Shayna' },
+  { id: 'qp6MSimqAvM', title: 'Shayna' },
   { id: 'pnxIPKr_qp4', title: 'Shayna at the Park with Grandad' },
 ]
 
