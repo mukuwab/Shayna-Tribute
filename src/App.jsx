@@ -1,9 +1,35 @@
 import { useState } from 'react'
 import shaynaPhoto from './assets/photos/shayna-main-pic.JPEG'
+import photo1 from './assets/photos/42A3BA22-7896-485E-9BF3-C89F285A3028_4_5005_c.jpeg'
+import photo2 from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
+import photo3 from './assets/photos/7E4982D2-B71F-40BC-BD27-2DF99EB835A2.JPG'
+import photo4 from './assets/photos/82989F93-15DF-491D-AEB6-274967839E96_4_5005_c.jpeg'
+import photo5 from './assets/photos/B125C57E-4AE2-45E9-9F69-989F89AC2064_1_105_c.jpeg'
+import photo6 from './assets/photos/B1398BD3-104B-4FCD-8993-3FF5F82906C8.jpg'
+import photo7 from './assets/photos/IMG_3950.JPG'
+import photo8 from './assets/photos/IMG_6787.PNG'
+import photo9 from './assets/photos/View recent photos.png'
 import './App.css'
+
+const galleryPhotos = [
+  shaynaPhoto, photo1, photo2, photo3, photo4,
+  photo5, photo6, photo7, photo8, photo9,
+]
 
 function App() {
   const [tab, setTab] = useState('tribute')
+  const [lightbox, setLightbox] = useState(null) // index or null
+
+  function openLightbox(i) { setLightbox(i) }
+  function closeLightbox() { setLightbox(null) }
+  function prev() { setLightbox(i => (i - 1 + galleryPhotos.length) % galleryPhotos.length) }
+  function next() { setLightbox(i => (i + 1) % galleryPhotos.length) }
+
+  function onKeyDown(e) {
+    if (e.key === 'ArrowLeft') prev()
+    else if (e.key === 'ArrowRight') next()
+    else if (e.key === 'Escape') closeLightbox()
+  }
 
   return (
     <div className="tribute">
@@ -23,10 +49,30 @@ function App() {
       </nav>
 
       {tab === 'gallery' && (
-        <div className="coming-soon">
-          <span className="coming-soon-paw">&#x1F43E;</span>
-          <h2>Coming Soon</h2>
-          <p>Photos of Shayna will be added here.</p>
+        <div className="gallery">
+          <h2 className="gallery-title">Shayna's Gallery</h2>
+          <div className="gallery-grid">
+            {galleryPhotos.map((src, i) => (
+              <div key={i} className="gallery-item" onClick={() => openLightbox(i)}>
+                <img src={src} alt={`Shayna ${i + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {lightbox !== null && (
+        <div className="lightbox" onClick={closeLightbox} onKeyDown={onKeyDown} tabIndex={0} ref={el => el?.focus()}>
+          <button className="lb-close" onClick={closeLightbox} aria-label="Close">&#x2715;</button>
+          <button className="lb-prev" onClick={e => { e.stopPropagation(); prev() }} aria-label="Previous">&#x2039;</button>
+          <img
+            src={galleryPhotos[lightbox]}
+            alt={`Shayna ${lightbox + 1}`}
+            className="lb-img"
+            onClick={e => e.stopPropagation()}
+          />
+          <button className="lb-next" onClick={e => { e.stopPropagation(); next() }} aria-label="Next">&#x203a;</button>
+          <div className="lb-counter">{lightbox + 1} / {galleryPhotos.length}</div>
         </div>
       )}
 
