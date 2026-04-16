@@ -7,12 +7,13 @@ import zoePhoto from './assets/photos/Screenshot-2026-04-15-at-9.19.26-PM.png'
 import robertJrPhoto from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
 import zannyPhoto from './assets/photos/Screenshot-2026-04-15-at-8.29.56-PM.png'
 import bestFriendPhoto from './assets/photos/E508B0D5-EAA5-4D4B-86AB-C4FE96B7A661_1_105_c.jpeg'
+import monicaPhoto from './assets/photos/Screenshot-2026-04-16-at-12.57.10-AM.png'
 import bodyPhoto from './assets/photos/Screenshot-2026-04-16-at-12.21.15-AM.png'
 import recentPhoto from './assets/photos/View-recent-photos.png'
 import obituaryPhoto from './assets/photos/Screenshot-2026-04-16-at-12.40.38-AM.png'
 
 const photoModules = import.meta.glob('./assets/photos/*', { eager: true })
-const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM']
+const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM', 'Screenshot-2026-04-16-at-12.57.10-AM']
 
 const galleryPhotos = [
   shaynaPhoto,
@@ -31,6 +32,11 @@ const tributes = [
   { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna.' },
   { name: 'Zanny', photo: zannyPhoto, message: 'Good dog!' },
   { name: 'Robert Jr.', photo: robertJrPhoto, message: 'Shayna was an awesome dog and I loved when she would stand on her hind legs when you come through the door! She was a cute dog.' },
+  {
+    name: 'Monica',
+    photo: monicaPhoto,
+    message: 'I have watched Shayna grow through the years and she always makes me smile. So full of fun and energy. Always know what she wants and who she wants it from. I know she had difficulties in her short life, but despite of it all she remained loving and devoted, with a big heart.\n\nMay Allah grant her Junnah and everlasting love, peace and comfort upon her passing. Allah is the giver of life and the taker of life. To Him we came and to Him we will return. Allahu Akbar!',
+  },
   {
     name: "Shayna's Best Friend",
     photo: bestFriendPhoto,
@@ -332,7 +338,7 @@ function App() {
           <p>Your journey continues… just on the other side.</p>
         </div>
         <div className="paw-footer">&#x1F43E;</div>
-        <p className="tribute-signature">— Robert Bearden Dr. and Family</p>
+        <p className="tribute-signature">— Robert Bearden Sr. and Family</p>
       </footer>
       </>}
     </div>
