@@ -13,7 +13,7 @@ import recentPhoto from './assets/photos/View-recent-photos.png'
 import obituaryPhoto from './assets/photos/Screenshot-2026-04-16-at-12.40.38-AM.png'
 
 const photoModules = import.meta.glob('./assets/photos/*', { eager: true })
-const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM', 'Screenshot-2026-04-16-at-12.57.10-AM']
+const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM', 'Screenshot-2026-04-16-at-12.40.38-AM', 'Screenshot-2026-04-16-at-12.57.10-AM', 'Screenshot-2026-04-15-at-9.19.26-PM']
 
 const galleryPhotos = [
   shaynaPhoto,
@@ -46,7 +46,10 @@ const tributes = [
 
 function App() {
   const [tab, setTab] = useState('obituary')
+  const [menuOpen, setMenuOpen] = useState(false)
   const [lightbox, setLightbox] = useState(null) // index or null
+
+  function selectTab(t) { setTab(t); setMenuOpen(false) }
 
   function openLightbox(i) { setLightbox(i) }
   function closeLightbox() { setLightbox(null) }
@@ -61,32 +64,17 @@ function App() {
 
   return (
     <div className="tribute">
-      <nav className="tab-nav">
-        <button
-          className={`tab-btn${tab === 'obituary' ? ' active' : ''}`}
-          onClick={() => setTab('obituary')}
-        >
-          Obituary
+      <div className="nav-wrapper">
+        <button className="hamburger" onClick={() => setMenuOpen(o => !o)}>
+          {menuOpen ? '✕' : '☰'}
         </button>
-        <button
-          className={`tab-btn${tab === 'tribute' ? ' active' : ''}`}
-          onClick={() => setTab('tribute')}
-        >
-          Grandad's Farewell
-        </button>
-        <button
-          className={`tab-btn${tab === 'gallery' ? ' active' : ''}`}
-          onClick={() => setTab('gallery')}
-        >
-          Gallery
-        </button>
-        <button
-          className={`tab-btn${tab === 'tributes' ? ' active' : ''}`}
-          onClick={() => setTab('tributes')}
-        >
-          Tributes
-        </button>
-      </nav>
+        <nav className={`tab-nav${menuOpen ? ' open' : ''}`}>
+          <button className={`tab-btn${tab === 'obituary' ? ' active' : ''}`} onClick={() => selectTab('obituary')}>Obituary</button>
+          <button className={`tab-btn${tab === 'tribute' ? ' active' : ''}`} onClick={() => selectTab('tribute')}>Grandad's Farewell</button>
+          <button className={`tab-btn${tab === 'gallery' ? ' active' : ''}`} onClick={() => selectTab('gallery')}>Gallery</button>
+          <button className={`tab-btn${tab === 'tributes' ? ' active' : ''}`} onClick={() => selectTab('tributes')}>Tributes</button>
+        </nav>
+      </div>
 
       {tab === 'obituary' && (
         <div className="obituary">
