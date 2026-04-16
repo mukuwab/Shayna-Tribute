@@ -48,7 +48,7 @@ function App() {
           className={`tab-btn${tab === 'tribute' ? ' active' : ''}`}
           onClick={() => setTab('tribute')}
         >
-          Tribute
+          Grandad's Farewell
         </button>
         <button
           className={`tab-btn${tab === 'gallery' ? ' active' : ''}`}
