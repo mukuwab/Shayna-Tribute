@@ -8,6 +8,7 @@
   --gold: #c9a96e;
   --gold-light: #e8d4a8;
   --shadow-color: rgba(90, 60, 20, 0.15);
+  --card-bg: rgba(255, 251, 244, 0.8);
 
   font: 18px/1.6 Georgia, 'Times New Roman', serif;
   color: var(--text);

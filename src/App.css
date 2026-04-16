@@ -89,6 +89,70 @@
   display: block;
 }
 
+/* ── Tributes ── */
+.tributes {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  text-align: center;
+}
+
+.tributes-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--text-heading);
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+
+.tributes-subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0 0 48px;
+}
+
+.tributes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tribute-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  padding: 32px 36px;
+  text-align: left;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.tribute-card-message {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-heading);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.tribute-card-message p {
+  margin: 0 0 14px;
+}
+
+.tribute-card-message p:last-child {
+  margin-bottom: 0;
+}
+
+.tribute-card-name {
+  font-size: 15px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: right;
+}
+
 /* ── Lightbox ── */
 .lightbox {
   position: fixed;

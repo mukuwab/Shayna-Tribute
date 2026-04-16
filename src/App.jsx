@@ -18,6 +18,14 @@ const galleryPhotos = [
   photo5, photo6, photo7, photo8, photo9, photo10, photo11,
 ]
 
+const tributes = [
+  {
+    name: 'Mukuwa',
+    message: 'She was the only dog I knew who could light up an entire room with her smile. Even now, that smile lives on in our hearts.\n\nThough it hurts deeply to say goodbye, loving her was worth every moment, even the heartbreak.\n\nI love you, sweet girl. Rest in peace.',
+  },
+  { name: 'Zoe', message: 'I love you, Shayna' },
+]
+
 function App() {
   const [tab, setTab] = useState('tribute')
   const [lightbox, setLightbox] = useState(null) // index or null
@@ -48,6 +56,12 @@ function App() {
         >
           Gallery
         </button>
+        <button
+          className={`tab-btn${tab === 'tributes' ? ' active' : ''}`}
+          onClick={() => setTab('tributes')}
+        >
+          Tributes
+        </button>
       </nav>
 
       {tab === 'gallery' && (
@@ -57,6 +71,25 @@ function App() {
             {galleryPhotos.map((src, i) => (
               <div key={i} className="gallery-item" onClick={() => openLightbox(i)}>
                 <img src={src} alt={`Shayna ${i + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tab === 'tributes' && (
+        <div className="tributes">
+          <h2 className="tributes-title">Tributes</h2>
+          <p className="tributes-subtitle">Words of love from those who knew her.</p>
+          <div className="tributes-list">
+            {tributes.map((t, i) => (
+              <div key={i} className="tribute-card">
+                <div className="tribute-card-message">
+                  {t.message.split('\n\n').map((para, j) => (
+                    <p key={j}>"{para}"</p>
+                  ))}
+                </div>
+                <p className="tribute-card-name">— {t.name}</p>
               </div>
             ))}
           </div>
