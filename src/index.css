@@ -1,0 +1,31 @@
+:root {
+  --text: #5c4e44;
+  --text-heading: #2e2018;
+  --text-muted: #7a6a60;
+  --bg: #fdfaf6;
+  --border: #e8e0d8;
+  --border-gold: rgba(180, 140, 80, 0.35);
+  --gold: #c9a96e;
+  --gold-light: #e8d4a8;
+  --shadow-color: rgba(90, 60, 20, 0.15);
+
+  font: 18px/1.6 Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+* {
+  box-sizing: border-box;
+}

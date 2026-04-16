@@ -1,0 +1,236 @@
+/* ── Tab navigation ── */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding-top: 40px;
+  border-bottom: 2px solid var(--border-gold);
+  margin-bottom: 0;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 10px 32px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  color: var(--text-muted);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--text-heading);
+}
+
+.tab-btn.active {
+  color: var(--text-heading);
+  border-bottom-color: var(--gold);
+}
+
+/* ── Coming Soon ── */
+.coming-soon {
+  text-align: center;
+  padding: 100px 24px;
+  color: var(--text-muted);
+}
+
+.coming-soon-paw {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 24px;
+  opacity: 0.35;
+}
+
+.coming-soon h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--text-heading);
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+}
+
+.coming-soon p {
+  font-size: 17px;
+  font-style: italic;
+  margin: 0;
+}
+
+.tribute {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text);
+}
+
+/* ── Header ── */
+.tribute-header {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+.photo-frame {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(145deg, var(--gold), var(--gold-light));
+  box-shadow: 0 8px 32px var(--shadow-color), 0 2px 8px var(--shadow-color);
+  margin-bottom: 40px;
+}
+
+.shayna-photo {
+  display: block;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid var(--bg);
+}
+
+@media (max-width: 600px) {
+  .shayna-photo {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.tribute-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--text-heading);
+  line-height: 1.2;
+  margin: 0 0 32px;
+}
+
+@media (max-width: 600px) {
+  .tribute-title {
+    font-size: 32px;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-gold);
+  max-width: 160px;
+}
+
+.paw {
+  font-size: 22px;
+  margin: 0 16px;
+  opacity: 0.6;
+}
+
+/* ── Body ── */
+.tribute-body {
+  font-size: 19px;
+  line-height: 1.85;
+  text-align: justify;
+}
+
+.tribute-body p {
+  margin: 0 0 26px;
+}
+
+.emphasis {
+  font-style: italic;
+  color: var(--text-heading);
+  font-size: 21px !important;
+  text-align: center !important;
+  margin: 36px 0 !important;
+}
+
+.turning-point {
+  font-style: italic;
+  font-size: 22px !important;
+  text-align: center !important;
+  color: var(--text-heading);
+  margin: 36px 0 !important;
+}
+
+.stanza {
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.stanza p {
+  margin: 0 0 10px !important;
+}
+
+.stanza p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.scene-break {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 44px 0;
+}
+
+.scene-break span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+/* ── Footer ── */
+.tribute-footer {
+  text-align: center;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-gold);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.closing-words {
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.closing-words p {
+  margin: 0 0 8px;
+}
+
+.final-words {
+  font-size: 22px;
+  font-style: italic;
+  color: var(--text-heading);
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.final-words p {
+  margin: 0 0 8px;
+}
+
+.paw-footer {
+  font-size: 28px;
+  opacity: 0.4;
+}
