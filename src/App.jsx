@@ -23,6 +23,14 @@ const galleryPhotos = [
     .map(([, mod]) => mod.default),
 ]
 
+const videos = [
+  { id: 'dm_0FC0Wcjo', title: 'Shayna' },
+  { id: 'wWO2G4J5AXQ', title: 'Shayna' },
+  { id: 'jW16W78GkH8', title: 'Shayna' },
+  { id: 'k1Jl6L7Cjdw', title: 'Shayna' },
+  { id: 'pnxIPKr_qp4', title: 'Shayna at the Park with Grandad' },
+]
+
 const tributes = [
   {
     name: 'Mukuwa',
@@ -38,9 +46,9 @@ const tributes = [
     message: 'I have watched Shayna grow through the years and she always makes me smile. So full of fun and energy. Always know what she wants and who she wants it from. I know she had difficulties in her short life, but despite of it all she remained loving and devoted, with a big heart.\n\nMay Allah grant her Junnah and everlasting love, peace and comfort upon her passing. Allah is the giver of life and the taker of life. To Him we came and to Him we will return. Allahu Akbar!',
   },
   {
-    name: "Shayna's Best Friend",
+    name: '',
     photo: bestFriendPhoto,
-    message: 'She was my best friend and companion for more years than I can count. We were rarely apart. Through every thunderstorm, every car alarm, every quiet night and restless one — she was there, and so was I. Whatever life brought, we faced it together.',
+    message: 'This was Shayna\'s closest companion for more years than anyone could count. They were rarely apart. Through every thunderstorm, every car alarm, every quiet night and restless one — Shayna kept her near. Whatever life brought, they faced it together. Where Shayna rested, so did her best friend.',
   },
 ]
 
@@ -72,6 +80,7 @@ function App() {
           <button className={`tab-btn${tab === 'obituary' ? ' active' : ''}`} onClick={() => selectTab('obituary')}>Obituary</button>
           <button className={`tab-btn${tab === 'tribute' ? ' active' : ''}`} onClick={() => selectTab('tribute')}>Grandad's Farewell</button>
           <button className={`tab-btn${tab === 'gallery' ? ' active' : ''}`} onClick={() => selectTab('gallery')}>Gallery</button>
+          <button className={`tab-btn${tab === 'videos' ? ' active' : ''}`} onClick={() => selectTab('videos')}>Videos</button>
           <button className={`tab-btn${tab === 'tributes' ? ' active' : ''}`} onClick={() => selectTab('tributes')}>Tributes</button>
         </nav>
       </div>
@@ -159,10 +168,28 @@ function App() {
                 )}
                 <div className="tribute-card-message">
                   {t.message.split('\n\n').map((para, j) => (
-                    <p key={j}>"{para}"</p>
+                    <p key={j}>{para}</p>
                   ))}
                 </div>
-                <p className="tribute-card-name">— {t.name}</p>
+                {t.name && <p className="tribute-card-name">— {t.name}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tab === 'videos' && (
+        <div className="videos">
+          <h2 className="videos-title">Videos</h2>
+          <div className="videos-grid">
+            {videos.map((v, i) => (
+              <div key={i} className="video-item">
+                <iframe
+                  src={`https://www.youtube.com/embed/${v.id}`}
+                  title={v.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             ))}
           </div>
