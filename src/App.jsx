@@ -1,29 +1,33 @@
 import { useState } from 'react'
-import shaynaPhoto from './assets/photos/shayna-main-pic.JPEG'
-import photo1 from './assets/photos/42A3BA22-7896-485E-9BF3-C89F285A3028_4_5005_c.jpeg'
-import photo2 from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
-import photo3 from './assets/photos/7E4982D2-B71F-40BC-BD27-2DF99EB835A2.JPG'
-import photo4 from './assets/photos/82989F93-15DF-491D-AEB6-274967839E96_4_5005_c.jpeg'
-import photo5 from './assets/photos/B125C57E-4AE2-45E9-9F69-989F89AC2064_1_105_c.jpeg'
-import photo6 from './assets/photos/B1398BD3-104B-4FCD-8993-3FF5F82906C8.jpg'
-import photo7 from './assets/photos/IMG_3950.JPG'
-import photo8 from './assets/photos/IMG_6787.PNG'
-import photo9 from './assets/photos/View-recent-photos.png'
-import photo10 from './assets/photos/Screenshot-2026-04-15-at-8.28.59-PM.png'
-import photo11 from './assets/photos/Screenshot-2026-04-15-at-8.29.56-PM.png'
 import './App.css'
 
+import shaynaPhoto from './assets/photos/shayna-main-pic.JPEG'
+import mukuwaPhoto from './assets/photos/7E4982D2-B71F-40BC-BD27-2DF99EB835A2.JPG'
+import zoePhoto from './assets/photos/Screenshot-2026-04-15-at-9.19.26-PM.png'
+import robertJrPhoto from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
+import bodyPhoto from './assets/photos/Screenshot-2026-04-16-at-12.21.15-AM.png'
+import recentPhoto from './assets/photos/View-recent-photos.png'
+
+const photoModules = import.meta.glob('./assets/photos/*', { eager: true })
+const excludeFromGallery = ['shayna-main-pic', 'Screenshot-2026-04-16-at-12.28.31-AM', 'Screenshot-2026-04-16-at-12.21.15-AM']
+
 const galleryPhotos = [
-  shaynaPhoto, photo1, photo2, photo3, photo4,
-  photo5, photo6, photo7, photo8, photo9, photo10, photo11,
+  shaynaPhoto,
+  ...Object.entries(photoModules)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .filter(([path]) => !excludeFromGallery.some(name => path.includes(name)))
+    .map(([, mod]) => mod.default),
 ]
 
 const tributes = [
   {
     name: 'Mukuwa',
+    photo: mukuwaPhoto,
     message: 'She was the only dog I knew who could light up an entire room with her smile. Even now, that smile lives on in our hearts.\n\nThough it hurts deeply to say goodbye, loving her was worth every moment, even the heartbreak.\n\nI love you, sweet girl. Rest in peace.',
   },
-  { name: 'Zoe', message: 'I love you, Shayna' },
+  { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna' },
+  { name: 'Zanny', message: 'Good dog' },
+  { name: 'Robert Jr.', photo: robertJrPhoto, message: 'Shayna was an awesome dog and I loved when she would stand on her hind legs when you come through the door! She was a cute dog.' },
 ]
 
 function App() {
@@ -84,6 +88,12 @@ function App() {
           <div className="tributes-list">
             {tributes.map((t, i) => (
               <div key={i} className="tribute-card">
+                {t.photo && (
+                  <div className="pinned-photo">
+                    <div className="pin" />
+                    <img src={t.photo} alt={`${t.name}'s photo`} />
+                  </div>
+                )}
                 <div className="tribute-card-message">
                   {t.message.split('\n\n').map((para, j) => (
                     <p key={j}>"{para}"</p>
@@ -145,6 +155,9 @@ function App() {
         </p>
 
         <p>
+          <div className="body-photo-wrap">
+            <img src={bodyPhoto} alt="Shayna" className="body-photo" />
+          </div>
           She changed me too. I was never a dog lover — until Shayna. She woke me every morning,
           insisting on walks and adventures. She waited for me before dark so we could go to the
           park. She turned routines into rituals and quiet days into joyful ones. Because of her,
@@ -159,7 +172,7 @@ function App() {
           of fresh air. Those were her moments of pure happiness.
         </p>
 
-        <div className="scene-break">
+        <div className="scene-break" style={{ clear: 'both' }}>
           <span></span><span></span><span></span>
         </div>
 
@@ -225,6 +238,9 @@ function App() {
         </p>
 
         <p>
+          <div className="body-photo-wrap left">
+            <img src={recentPhoto} alt="Shayna" className="body-photo" />
+          </div>
           Thank God for giving us these beautiful animals to be part of our families. They love
           us completely, never asking for anything except our time, our care, and our hearts.
           And in return, they give us loyalty, companionship, and joy beyond words.
@@ -247,6 +263,7 @@ function App() {
           <p>Your journey continues… just on the other side.</p>
         </div>
         <div className="paw-footer">&#x1F43E;</div>
+        <p className="tribute-signature">— Robert Bearden Dr. and Family</p>
       </footer>
       </>}
     </div>
