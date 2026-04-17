@@ -268,6 +268,21 @@
   overflow: hidden;
 }
 
+/* ── Site footer ── */
+.site-footer {
+  border-top: 1px solid var(--border-gold);
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 /* ── Pinned photo ── */
 .pinned-photo {
   position: relative;

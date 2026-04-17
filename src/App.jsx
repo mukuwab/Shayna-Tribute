@@ -360,6 +360,10 @@ function App() {
         <p className="tribute-signature">— Robert Bearden Sr. and Family</p>
       </footer>
       </>}
+
+      <footer className="site-footer">
+        <p>&copy; 2026 Mukuwa Baffoe. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
