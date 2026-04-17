@@ -5,7 +5,8 @@ import shaynaPhoto from './assets/photos/shayna-main-pic.JPEG'
 import mukuwaPhoto from './assets/photos/7E4982D2-B71F-40BC-BD27-2DF99EB835A2.JPG'
 import zoePhoto from './assets/photos/Screenshot-2026-04-15-at-9.19.26-PM.png'
 import robertJrPhoto from './assets/photos/46F2315A-952C-493E-B0A9-D39A1F395A83.JPG'
-import zannyPhoto from './assets/photos/Screenshot-2026-04-15-at-8.29.56-PM.png'
+import zannyPhoto from './assets/photos/IMG_1922-4.jpg'
+import maryPhoto from './assets/photos/Screenshot-2026-04-15-at-8.29.56-PM.png'
 import bestFriendPhoto from './assets/photos/E508B0D5-EAA5-4D4B-86AB-C4FE96B7A661_1_105_c.jpeg'
 import monicaPhoto from './assets/photos/Screenshot-2026-04-16-at-12.57.10-AM.png'
 import bodyPhoto from './assets/photos/Screenshot-2026-04-16-at-12.21.15-AM.png'
@@ -42,6 +43,7 @@ const tributes = [
   { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna.' },
   { name: 'Zanny', photo: zannyPhoto, message: 'Good dog!' },
   { name: 'Robert Jr.', photo: robertJrPhoto, message: 'Shayna was an awesome dog and I loved when she would stand on her hind legs when you come through the door! She was a cute dog.' },
+  { name: 'Mary', photo: maryPhoto, message: 'Shayna brought so much joy into my life to only have been ten pounds and only having her 2 years. I miss her so much and don\'t know how I ever lived without her. To me she was family.' },
   {
     name: 'Monica',
     photo: monicaPhoto,
