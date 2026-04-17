@@ -35,6 +35,7 @@ const videos = [
 ]
 
 const tributes = [
+  { name: 'Mary', photo: maryPhoto, message: 'Shayna brought so much joy into my life to only have been ten pounds and only having her 2 years. I miss her so much and don\'t know how I ever lived without her. To me she was family.' },
   {
     name: 'Mukuwa',
     photo: mukuwaPhoto,
@@ -43,7 +44,6 @@ const tributes = [
   { name: 'Zoe', photo: zoePhoto, message: 'I love you, Shayna.' },
   { name: 'Zanny', photo: zannyPhoto, message: 'Good dog!' },
   { name: 'Robert Jr.', photo: robertJrPhoto, message: 'Shayna was an awesome dog and I loved when she would stand on her hind legs when you come through the door! She was a cute dog.' },
-  { name: 'Mary', photo: maryPhoto, message: 'Shayna brought so much joy into my life to only have been ten pounds and only having her 2 years. I miss her so much and don\'t know how I ever lived without her. To me she was family.' },
   {
     name: 'Monica',
     photo: monicaPhoto,
